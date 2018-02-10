@@ -1,8 +1,13 @@
 #banner{
-	background: #212121;
+	background: #313131;
 	height: 150px;
 }
 
 body{
 	background: black;
+	color: white;
+}
+
+.container{
+	background: #212121;
 }
