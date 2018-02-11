@@ -29,6 +29,16 @@ function initCalBtnCallback(){
 			weight : weight
 		};
 		console.log(data);
+		$.ajax({
+			url: 'bmi-service.php',
+			type: 'get',
+			dataType: 'json',
+			data: data,
+			success:function (response){
+				console.log(response);
+			}
+		});
+		
 	});
 	$("#btn-cal-bmr").click(function(event) {
 		let height = $("#input-bmr-height").val();
