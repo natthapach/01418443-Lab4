@@ -81,5 +81,14 @@ function initCalBtnCallback(){
 			tri : tri
 		};
 		console.log(data);
+		$.ajax({
+			url: "cholesterol-service.php",
+			type: "get",
+			dataType: "json",
+			data: data,
+			success: function(response){
+				console.log(response);
+			}
+		})
 	});
 }
