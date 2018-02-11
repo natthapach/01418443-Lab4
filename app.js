@@ -27,7 +27,7 @@ $(document).ready(function(){
 function hideAllResult(){
 	$('#bmi-result').hide();
 	$('#bmr-result').hide();
-	$('chol-result').hide();
+	$('#chol-result').hide();
 }
 
 function initCalBtnCallback(){
@@ -97,6 +97,9 @@ function initCalBtnCallback(){
 			data: data,
 			success:function(response){
 				console.log(response);
+				$('#bmr-result').show();
+				$('#bmr-value-result').text(response.bmr.toFixed(2));
+				$('#tdee-value-result').text(response.tdee.toFixed(2));
 			}
 		});
 	});
@@ -117,6 +120,65 @@ function initCalBtnCallback(){
 			data: data,
 			success: function(response){
 				console.log(response);
+				$('#chol-result').show();
+				switch(response.ldl_level){
+					case 0 :
+						$("#ldl-text-result").text("Very Good");
+						break;
+					case 1:
+						$("#ldl-text-result").text("Good");
+						break;
+					case 2:
+						$("#ldl-text-result").text("Poor");
+						break;
+					case 3:
+						$("#ldl-text-result").text("Bad");
+						break;
+					case 4:
+						$("#ldl-text-result").text("Very Bad");
+						break;
+				}
+
+				switch(response.hdl_level){
+					case 0:
+						$("#hdl-text-result").text("Good");
+						break;
+					case 1:
+						$("#hdl-text-result").text("Risk for heart disease");
+						break;
+					case 2:
+						$("#hdl-text-result").text("High risk for heart disease");
+						break;
+				}
+
+				switch(response.tri_level){
+					case 0:
+						$("#tri-text-result").text("Good");
+						break;
+					case 1:
+						$("#tri-text-result").text("A little high");
+						break;
+					case 2:
+						$("#tri-text-result").text("High");
+						break;
+					case 3:
+						$("#tri-text-result").text("Very high");
+						break;
+				}
+
+				$("#chol-value-result").text(response.chol);
+
+				switch(response.chol_level){
+					case 0:
+						$("#chol-text-result").text("Good");
+						break;
+					case 1:
+						$("#chol-text-result").text("Rather high");
+						break;
+					case 2:
+						$("#chol-text-result").text("High");
+						break;
+				}
 			}
 		})
 	});
