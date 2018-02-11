@@ -43,6 +43,7 @@ function initCalBtnCallback(){
 	$("#btn-cal-bmr").click(function(event) {
 		let height = $("#input-bmr-height").val();
 		let weight = $("#input-bmr-weight").val();
+		let age = $("#input-bmr-age").val();
 		let gender;
 		if ($("#radio-male").prop("checked", true)) {
 			gender = "male";
@@ -53,10 +54,22 @@ function initCalBtnCallback(){
 		let data = {
 			height : height,
 			weight : weight,
+			age : age,
 			gender : gender,
 			activity : activity
 		};
 		console.log(data);
+		$.ajax({
+			url: 'bmr-service.php',
+			type: 'get',
+			dataType: 'json',
+			data: data,
+			success:function(response){
+				console.log(response);
+			}
+		});
+		
+		
 	});
 	$("#btn-cal-chol").click(function(event) {
 		let ldl = $("#input-chol-LDL").val();
