@@ -9,7 +9,7 @@ body{
 	background: url(https://img1.goodfon.com/original/1920x1080/0/a4/running-jogging-running-shoes.jpg);
 	background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 100%;
+    background-size: cover;
 	color: white;
 	font-size: 1.3em;
 }

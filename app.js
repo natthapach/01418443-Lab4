@@ -1,3 +1,4 @@
+// let i=0;
 $(document).ready(function(){
 	$("#bmr-form").hide();
 	$("#chol-form").hide();
@@ -22,6 +23,18 @@ $(document).ready(function(){
     	}
     });
     initCalBtnCallback();
+    // setInterval(function () {
+    // 	i+=10;
+    // 	let j = i%($("#running").parent().width());
+    // 	console.log("j", j);
+    // 	$("#running").css({
+    // 		left: (j)+"px",
+    // 		position:"relative"
+    // 	})
+    // 	console.log($("#running").position());
+    // 	console.log($("#running").width());
+    // 	console.log($("#running").parent().width());
+    // }, 100);
 });
 
 function hideAllResult(){
@@ -31,6 +44,9 @@ function hideAllResult(){
 }
 
 function initCalBtnCallback(){
+	$("#btn-clear").click(function(){
+		alert("Press F5");
+	});
 	$("#btn-cal-bmi").click(function(event) {
 		let height = $("#input-bmi-height").val();
 		let weight = $("#input-bmi-weight").val();
