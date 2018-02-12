@@ -6,17 +6,17 @@ $(document).ready(function(){
     	console.log(this.value)
     	if (this.value == "bmi") {
     		hideAllResult();
-    		$("#bmi-form").show();
+    		$("#bmi-form").show("slow");
     		$("#bmr-form").hide();
 			$("#chol-form").hide();
     	} else if (this.value == "bmr") {
     		hideAllResult();
-    		$("#bmr-form").show();
+    		$("#bmr-form").show("slow");
     		$("#bmi-form").hide();
 			$("#chol-form").hide();
     	} else if (this.value == "chol") {
     		hideAllResult();
-    		$("#chol-form").show();
+    		$("#chol-form").show("slow");
     		$("#bmr-form").hide();
 			$("#bmi-form").hide();
     	}
@@ -46,7 +46,7 @@ function initCalBtnCallback(){
 			data: data,
 			success:function (response){
 				console.log(response);
-				$("#bmi-result").show();
+				$("#bmi-result").show("slow");
 				$("#bmi-value-result").text(response.bmi.toFixed(2));
 				switch(response.level){
 					case 0:
@@ -99,7 +99,8 @@ function initCalBtnCallback(){
 			data: data,
 			success:function(response){
 				console.log(response);
-				$('#bmr-result').show();
+
+				$('#bmr-result').show("slow");
 				$('#bmr-value-result').text(response.bmr.toFixed(2));
 				$('#tdee-value-result').text(response.tdee.toFixed(2));
 			}
@@ -122,7 +123,7 @@ function initCalBtnCallback(){
 			data: data,
 			success: function(response){
 				console.log(response);
-				$('#chol-result').show();
+				$('#chol-result').show("slow");
 				switch(response.ldl_level){
 					case 0 :
 						$("#ldl-text-result").text("Very Good");

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Health Calculator</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="app.css">
 </head>
@@ -57,11 +57,9 @@
 				<button class="btn btn-success" id="btn-cal-bmr">Calculate</button>
 			</div>
 			<div class="col-12" id="chol-form">
-				LDL(mg-dL) <input type="number" min="0" max="300" step="0.1" id="input-chol-LDL" value="0" name="LDL">
-				<br>
-				HDL(mg-dL) <input type="number" min="0" max="100" step="0.1" id="input-chol-HDL" value="0" name="HDL">
-				<br>
-				triglycerids(mg-dL) <input type="number" min="0" max="600" step="0.1" id="input-chol-tri" value="0" name="LDL">
+				LDL(mg-dL) <input class="form-control" type="number" min="0" max="300" step="0.1" id="input-chol-LDL" value="0" name="LDL">
+				HDL(mg-dL) <input class="form-control" type="number" min="0" max="100" step="0.1" id="input-chol-HDL" value="0" name="HDL">
+				triglycerids(mg-dL) <input class="form-control" type="number" min="0" max="600" step="0.1" id="input-chol-tri" value="0" name="LDL">
 				<br>
 				<button class="btn btn-success" id="btn-cal-chol">Calculate</button>
 			</div>
@@ -89,8 +87,14 @@
 				Triglycerides : <span id="tri-text-result"></span>
 				<br>
 				Cholesterol : <span id="chol-value-result"></span>
-				<br>
-				<span id="chol-text-result"></span>
+				(<span id="chol-text-result"></span>)
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12" id="footer">
+				<button class="btn btn-danger" id="btn-clear">
+					CLEAR
+				</button>
 			</div>
 		</div>
 	</div>
