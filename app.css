@@ -1,6 +1,7 @@
 #banner{
 	background: #313131;
-	height: 150px;
+	padding: 20px;
+	text-align:center;
 }
 
 body{
@@ -10,4 +11,13 @@ body{
 
 .container{
 	background: #212121;
+}
+
+#menu{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.form{
+	padding-bottom: 10px;
 }

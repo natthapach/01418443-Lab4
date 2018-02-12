@@ -76,7 +76,9 @@ function initCalBtnCallback(){
 		let weight = $("#input-bmr-weight").val();
 		let age = $("#input-bmr-age").val();
 		let gender;
-		if ($("#radio-male").prop("checked", true)) {
+		console.log("male", $('#radio-male:checked').val());
+		console.log("femal", $('#radio-female:checked').val());
+		if ($('#radio-male:checked').val()) {
 			gender = "male";
 		} else {
 			gender = "female";
